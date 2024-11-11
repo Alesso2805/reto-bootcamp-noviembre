@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Plaza Vea Scraper",
+  "version": "1.0",
+  "description": "Extrae productos de Plaza Vea",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.plazavea.com.pe/*"],
+      "js": ["src/content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "public/popup.html"
+  }
+}
